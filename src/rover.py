@@ -17,20 +17,24 @@ class Rover(SearchProblem):
     def actions(self, state) -> list:
         moves = []
         if state[0] > 0:
-            objective_nav = self.map[self.initial_state[0]-1,self.initial_state[1]]
-            if objective_nav == 2:
+            objective_nav = self.map[state[0]-1,state[1]]
+            print(f'{state[1]}-{state[0]}->{objective_nav}')
+            if objective_nav in [3, 4]:
                 moves.append((state[0]-1,state[1]))
         if state[0] < self.map_limit[0]:
-            objective_nav = self.map[self.initial_state[0]+1,self.initial_state[1]]
-            if objective_nav == 2:
+            objective_nav = self.map[state[0]+1,state[1]]
+            print(f'{state[1]}-{state[0]}->{objective_nav}')
+            if objective_nav in [3, 4]:
                 moves.append((state[0]+1,state[1]))
         if state[1] > 0:
-            objective_nav = self.map[self.initial_state[0],self.initial_state[1]-1]
-            if objective_nav == 2:
+            objective_nav = self.map[state[0],state[1]-1]
+            print(f'{state[1]}-{state[0]}->{objective_nav}')
+            if objective_nav in [3, 4]:
                 moves.append((state[0],state[1]-1))
         if state[1] < self.map_limit[1]:
-            objective_nav = self.map[self.initial_state[0],self.initial_state[1]+1]
-            if objective_nav == 2:
+            objective_nav = self.map[state[0],state[1]+1]
+            print(f'{state[1]}-{state[0]}->{objective_nav}')
+            if objective_nav in [3, 4]:
                 moves.append((state[0],state[1]+1))
         return moves
 
@@ -51,9 +55,9 @@ class PredictPath:
 
     def __init__(self, origin, destination) -> None:
         print(origin)
-        self.origin = (origin[0]//200, origin[1]//200)
+        self.origin = (origin[1]//200, origin[0]//200)
         print(self.origin)
-        self.destination = (destination[0]//200, destination[1]//200)
+        self.destination = (destination[1]//200, destination[0]//200)
         print(self.destination)
         inputFile = open('./Data/map.obj', 'rb')
         self.map = pickle.load(inputFile)
@@ -61,13 +65,13 @@ class PredictPath:
         self.result = astar(rover, graph_search=True)
         print(self.result)
 
-origin = 10000, 5000
-destination = 5000, 5000
+# origin = 10000, 5000
+# destination = 5000, 5000
 
-a = PredictPath(origin,destination)
+# a = PredictPath(origin,destination)
 
-print(a.result.path())
-print(a.result.state)
+# print(a.result.path())
+# print(a.result.state)
 
 #result = greedy(my_problem)
 
