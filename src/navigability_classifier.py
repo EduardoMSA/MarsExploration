@@ -33,10 +33,6 @@ def classify():
         # 2 -> Muy navegable y navegable
 
         label = data[i][0]
-        if label == 1 or label == 2:
-            label = 1
-        elif label == 3 or label == 4:
-            label = 2
         original_labels[i] = label
 
         # Slope

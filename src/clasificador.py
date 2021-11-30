@@ -155,7 +155,7 @@ for i in range(0,new_n_rows,20):
                 
         print(label)
 
-        images[subimg_row//20][subimg_column//20] = label
+        images[subimg_row//20][subimg_column//20] = int(label)
 
 outputFile = open('./Data/map.obj', 'wb')
 pickle.dump(images, outputFile)
