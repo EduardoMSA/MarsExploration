@@ -99,7 +99,8 @@ depression[surface<0] = -1;
 rise = rd.FillDepressions(rda2, epsilon=True, in_place=False) - rda2
 rise[surface<0] = -1;
 
-images = []
+images = np.zeros([(new_n_rows//20)+1,(new_n_columns//20)+1])
+print(images)
 clf = classify()
 
 for i in range(0,new_n_rows,20):
@@ -154,7 +155,7 @@ for i in range(0,new_n_rows,20):
                 
         print(label)
 
-        images.append((label,subimg_column,subimg_column+20,subimg_row,subimg_row+20))
+        images[subimg_row//20][subimg_column//20] = label
 
 outputFile = open('./Data/map.obj', 'wb')
 pickle.dump(images, outputFile)
