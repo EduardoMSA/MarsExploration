@@ -15,23 +15,23 @@ def plotMaps(path):
     figure, axis = plt.subplots(2, 2)
 
     axis[0, 0].set_title(' Map ')
-    axis[0, 0].set_xlabel('x (m)')
-    axis[0, 0].set_ylabel('y (m)')
+    axis[0, 0].set_xlabel('x*10 (m)')
+    axis[0, 0].set_ylabel('y*10 (m)')
     axis[0, 0].imshow(map_data, cmap='hot', interpolation='nearest', aspect='auto')
 
     axis[0, 1].set_title(' Navigability Map ')
-    axis[0, 1].set_xlabel('x (m)')
-    axis[0, 1].set_ylabel('y (m)')
+    axis[0, 1].set_xlabel('x*10 (m)')
+    axis[0, 1].set_ylabel('y*10 (m)')
     axis[0, 1].imshow(map_data, cmap='hot', interpolation='nearest', aspect='auto')
 
     axis[1, 0].set_title(' Navigability Route ')
-    axis[1, 0].set_xlabel('x (m)')
-    axis[1, 0].set_ylabel('y (m)')
+    axis[1, 0].set_xlabel('x*10 (m)')
+    axis[1, 0].set_ylabel('y*10 (m)')
     axis[1, 0].imshow(map_data, cmap='hot', interpolation='nearest', aspect='auto')
 
     axis[1, 1].set_title(' Navigability Route Map ')
-    axis[1, 1].set_xlabel('x (m)')
-    axis[1, 1].set_ylabel('y (m)')
+    axis[1, 1].set_xlabel('x*10 (m)')
+    axis[1, 1].set_ylabel('y*10 (m)')
     axis[1, 1].imshow(map_data, cmap='hot', interpolation='nearest', aspect='auto')
 
     

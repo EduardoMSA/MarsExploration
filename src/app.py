@@ -2,8 +2,8 @@ from color_map import plotMaps
 from rover import PredictPath
 
 if __name__ == '__main__':
-    origin = 1000,2000
-    destination = 5000, 2000
+    origin = 1000,1000
+    destination = 6000, 13000
 
     rover = PredictPath(origin,destination)
 
