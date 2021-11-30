@@ -1,10 +1,5 @@
-from os import path
-from PIL.Image import NONE
-from numpy.core.fromnumeric import reshape
 from simpleai.search import SearchProblem
 from simpleai.search import astar, depth_first, greedy,  breadth_first
-import numpy as np 
-import matplotlib.pyplot as plt
 import pickle
 
 class Rover(SearchProblem):
@@ -64,19 +59,5 @@ class PredictPath:
         rover = Rover(origin=self.origin, destination=self.destination, map=self.map)
         self.result = astar(rover, graph_search=True)
         print(self.result)
-
-# origin = 10000, 5000
-# destination = 5000, 5000
-
-# a = PredictPath(origin,destination)
-
-# print(a.result.path())
-# print(a.result.state)
-
-#result = greedy(my_problem)
-
-#result = depth_first(my_problem, graph_search=True)
-
-#result = breadth_first(my_problem, graph_search=True)
 
 
